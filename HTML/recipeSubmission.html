@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- The DOCTYPE is the declaration saying we are coding in HTML -->
+<html>
+   
+<head>
+ 
+</head>
+<style>
+body {background-color: rgb(255, 255, 255);}
+h1   {color: orange;}
+p    {color: rgb(0, 0, 0);}
+h3 {color: orange;}
+input {color: black;}
+
+a:hover {
+  background-color: rgb(255, 183, 0);
+}
+</style>
+<h1 id="myHeader">Recipe Submissions</h1>
+<body>
+    <form onSubmit="handlesubmit">
+        <!-- the label is what is read to the user if they are using a screen-reader -->
+        <!-- for label the for attribute should match up with the id attribute in the input (binds them together) -->
+        <!-- the name attribute is the key of the data, the value is the value. if no value is present it is whatever the user inputs -->
+        <label for="recipe">Recipe name (required):</label>
+        <input 
+            type="text" 
+            id="recipe" 
+            name="recipe" 
+            placeholder="Name of Recipe"
+            autocomplete="on"
+            pattern="[\w]+"
+            title="Please provide only alphanumeric values"
+            required>
+            <!-- This is for accessibility. ARIA (Accessibility Rich Internet Applications) -->
+            <!-- we want this to alert the user using a screen reader whenever something changes aka an error message -->
+            <div role="alert" aria-live="assertive"></div>
+        <br>
+        <label for="ingredients">ingredients</label>
+        <br>
+        <textarea 
+            id="biography" 
+            name="biography" 
+            rows="4" 
+            cols="30" 
+            placeholder="Tell us the ingredients"></textarea>
+            <div role="alert" aria-live="assertive"></div>
+        <br>
+            <!-- title is what will be displayed in the input doesn't match pattern -->
+        <br>  
+        <br>
+        <label for="instructions">instructions</label>
+        <br>
+        <textarea 
+            id="instructions" 
+            name="instructions" 
+            rows="4" 
+            cols="30" 
+            placeholder="Tell us the instructions"></textarea>
+            <div role="alert" aria-live="assertive"></div>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+
+</html>
